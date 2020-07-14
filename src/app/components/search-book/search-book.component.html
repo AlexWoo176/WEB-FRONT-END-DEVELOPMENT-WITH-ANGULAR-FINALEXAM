@@ -1,1 +1,8 @@
-<p>search-book works!</p>
+<div id="books">
+  <input #searchBox (keyup)="search(searchBox.value)" placeholder="Search Book"/>
+  <ul class="books">
+    <li *ngFor="let book of books$ | async" class="bookListItem">
+      <a [routerLink]="['/books',book.id]">{{book.title}}</a>
+    </li>
+  </ul>
+</div>
