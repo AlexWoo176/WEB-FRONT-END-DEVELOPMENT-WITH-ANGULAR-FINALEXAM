@@ -9,6 +9,8 @@ import { EditBookComponent } from './components/edit-book/edit-book.component';
 import { DetailBookComponent } from './components/detail-book/detail-book.component';
 import { DeleteBookComponent } from './components/delete-book/delete-book.component';
 import { SearchBookComponent } from './components/search-book/search-book.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,10 @@ import { SearchBookComponent } from './components/search-book/search-book.compon
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

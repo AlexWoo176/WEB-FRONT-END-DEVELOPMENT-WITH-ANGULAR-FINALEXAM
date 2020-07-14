@@ -1,1 +1,22 @@
-<p>list-book works!</p>
+<h3 style="text-align: center">This is List of My Favorite Books</h3>
+<app-search-book></app-search-book>
+<a class="btn btn-success float-right" routerLink="create">Add New A Book</a>
+<table class="table table-bordered table-hover table-striped">
+  <thead class="bg-primary text-light">
+  <tr>
+    <th>#</th>
+    <th>Name</th>
+    <th>Author</th>
+    <th>Action</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let book of listBook; index as i">
+    <td>{{i + 1}}</td>
+    <td><a [routerLink]="['/books',book.id]">{{book.title}}</a></td>
+    <td>{{book.author}}</td>
+    <td><a [routerLink]="['/books', 'edit', book.id]">Edit</a> | <a
+      [routerLink]="['/books', 'delete', book.id]">Delete</a></td>
+  </tr>
+  </tbody>
+</table>
